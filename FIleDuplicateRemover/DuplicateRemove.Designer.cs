@@ -1,6 +1,6 @@
 ﻿namespace FIleDuplicateRemover
 {
-    partial class Form1
+    partial class DuplicateRemove
     {
         /// <summary>
         /// Required designer variable.
@@ -52,15 +52,15 @@
             // 
             // deleteDuplicatesBtn
             // 
-            this.deleteDuplicatesBtn.Location = new System.Drawing.Point(255, 43);
+            this.deleteDuplicatesBtn.Location = new System.Drawing.Point(231, 43);
             this.deleteDuplicatesBtn.Name = "deleteDuplicatesBtn";
-            this.deleteDuplicatesBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteDuplicatesBtn.Size = new System.Drawing.Size(99, 23);
             this.deleteDuplicatesBtn.TabIndex = 2;
-            this.deleteDuplicatesBtn.Text = "Delete";
+            this.deleteDuplicatesBtn.Text = "Delete duplicates";
             this.deleteDuplicatesBtn.UseVisualStyleBackColor = true;
             this.deleteDuplicatesBtn.Click += new System.EventHandler(this.deleteDuplicatesBtn_Click);
             // 
-            // Form1
+            // DuplicateRemove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,8 +68,8 @@
             this.Controls.Add(this.deleteDuplicatesBtn);
             this.Controls.Add(this.changeDirBtn);
             this.Controls.Add(this.dirTxtbox);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "DuplicateRemove";
+            this.Text = "FIlesDuplicateRemover";
             this.ResumeLayout(false);
             this.PerformLayout();
 

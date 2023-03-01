@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Security.Cryptography;
+using System.Security.Policy;
 
 namespace FIleDuplicateRemover
 {
-    public partial class Form1 : Form
+    public partial class DuplicateRemove : Form
     {
-        public Form1()
+        public DuplicateRemove()
         {
             InitializeComponent();
         }
@@ -29,7 +31,18 @@ namespace FIleDuplicateRemover
 
         private void deleteDuplicatesBtn_Click(object sender, EventArgs e)
         {
-
+            string[] files = Directory.GetFiles(dirTxtbox.Text);
+            string[] hashes = new string[files.Length];
+            for(int i  = 0; i < files.Length; i++)
+            {
+                using (var md5 = MD5.Create())
+                {
+                    using (var stream = File.OpenRead(files[i]))
+                    {
+                        hashes[i] = BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", "").ToLowerInvariant();
+                    }
+                }
+            }
         }
     }
 }
