@@ -31,6 +31,7 @@
             this.dirTxtbox = new System.Windows.Forms.TextBox();
             this.changeDirBtn = new System.Windows.Forms.Button();
             this.deleteDuplicatesBtn = new System.Windows.Forms.Button();
+            this.deleteProgressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // dirTxtbox
@@ -52,19 +53,35 @@
             // 
             // deleteDuplicatesBtn
             // 
-            this.deleteDuplicatesBtn.Location = new System.Drawing.Point(231, 43);
+            this.deleteDuplicatesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.deleteDuplicatesBtn.Location = new System.Drawing.Point(210, 43);
             this.deleteDuplicatesBtn.Name = "deleteDuplicatesBtn";
-            this.deleteDuplicatesBtn.Size = new System.Drawing.Size(99, 23);
+            this.deleteDuplicatesBtn.Size = new System.Drawing.Size(144, 26);
             this.deleteDuplicatesBtn.TabIndex = 2;
             this.deleteDuplicatesBtn.Text = "Delete duplicates";
             this.deleteDuplicatesBtn.UseVisualStyleBackColor = true;
             this.deleteDuplicatesBtn.Click += new System.EventHandler(this.deleteDuplicatesBtn_Click);
             // 
+            // deleteProgressBar
+            // 
+            this.deleteProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteProgressBar.Location = new System.Drawing.Point(12, 40);
+            this.deleteProgressBar.Minimum = 1;
+            this.deleteProgressBar.Name = "deleteProgressBar";
+            this.deleteProgressBar.Size = new System.Drawing.Size(585, 23);
+            this.deleteProgressBar.Step = 1;
+            this.deleteProgressBar.TabIndex = 3;
+            this.deleteProgressBar.Value = 1;
+            this.deleteProgressBar.Visible = false;
+            // 
             // DuplicateRemove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 78);
+            this.ClientSize = new System.Drawing.Size(609, 75);
+            this.Controls.Add(this.deleteProgressBar);
             this.Controls.Add(this.deleteDuplicatesBtn);
             this.Controls.Add(this.changeDirBtn);
             this.Controls.Add(this.dirTxtbox);
@@ -80,6 +97,7 @@
         private System.Windows.Forms.TextBox dirTxtbox;
         private System.Windows.Forms.Button changeDirBtn;
         private System.Windows.Forms.Button deleteDuplicatesBtn;
+        private System.Windows.Forms.ProgressBar deleteProgressBar;
     }
 }
 
