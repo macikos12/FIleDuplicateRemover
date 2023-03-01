@@ -68,10 +68,13 @@ namespace FIleDuplicateRemover
                         foundDuplicates[counter, 1] = j;
                         counter++;
                     }
-                    deleteProgressBar.PerformStep();
                 }
+                deleteProgressBar.PerformStep();
             }
-
+            for(int i = 0; i < counter; i++)
+            {
+                MessageBox.Show(i + " pair is:\n" + files[foundDuplicates[i, 0]] + "\n" + files[foundDuplicates[i, 1]], "Pair", MessageBoxButtons.OK);
+            }
             deleteDuplicatesBtn.Visible = true;
             deleteProgressBar.Visible = false;
         }
