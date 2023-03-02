@@ -30,6 +30,17 @@ namespace FIleDuplicateRemover
             }
         }
 
+        bool checkIfArrayContains(int[,] array, int number)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                if (array[i, 0] == number) 
+                { 
+                    return true; 
+                }
+            }
+            return false;
+        }
         private void deleteDuplicatesBtn_Click(object sender, EventArgs e)
         {
             if (dirTxtbox.Text == "")
@@ -62,7 +73,7 @@ namespace FIleDuplicateRemover
             {
                 for(int j = 0; j < hashes.Length; j++)
                 {
-                    if (i != j && hashes[i] == hashes[j])
+                    if (i != j && !checkIfArrayContains(foundDuplicates, j) && hashes[i] == hashes[j])
                     {
                         foundDuplicates[counter, 0] = i;
                         foundDuplicates[counter, 1] = j;
@@ -73,7 +84,15 @@ namespace FIleDuplicateRemover
             }
             for(int i = 0; i < counter; i++)
             {
-                MessageBox.Show(i + " pair is:\n" + files[foundDuplicates[i, 0]] + "\n" + files[foundDuplicates[i, 1]], "Pair", MessageBoxButtons.OK);
+                var msgBox = MessageBox.Show("Select file to keep\nYes:\t" + Path.GetFileName(files[foundDuplicates[i, 0]]) + "\nNo:\t" + Path.GetFileName(files[foundDuplicates[i, 1]]), "Pair " + i + "/" + counter, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                if (msgBox == DialogResult.Yes)
+                {
+                    File.Delete(files[foundDuplicates[i, 1]]);
+                }
+                else if(msgBox == DialogResult.No)
+                {
+                    File.Delete(files[foundDuplicates[i, 0]]);
+                }
             }
             deleteDuplicatesBtn.Visible = true;
             deleteProgressBar.Visible = false;
