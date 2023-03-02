@@ -50,6 +50,7 @@ namespace FIleDuplicateRemover
             /*I wanted to make a label tak communicates to user what was happening at the moment, 
               but label text was changing after all loops when it wasn't needed. 
               Can soeone tell me why?*/
+            deleteProgressBar.Value = 1;
             deleteDuplicatesBtn.Visible = false;
             deleteProgressBar.Visible = true;
             string[] files = Directory.GetFiles(dirTxtbox.Text);
