@@ -36,6 +36,8 @@
             // 
             // dirTxtbox
             // 
+            this.dirTxtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dirTxtbox.Location = new System.Drawing.Point(115, 14);
             this.dirTxtbox.Name = "dirTxtbox";
             this.dirTxtbox.Size = new System.Drawing.Size(482, 20);
@@ -53,6 +55,7 @@
             // 
             // deleteDuplicatesBtn
             // 
+            this.deleteDuplicatesBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.deleteDuplicatesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.deleteDuplicatesBtn.Location = new System.Drawing.Point(210, 43);
             this.deleteDuplicatesBtn.Name = "deleteDuplicatesBtn";
@@ -78,6 +81,7 @@
             // 
             // DuplicateRemove
             // 
+            this.AcceptButton = this.deleteDuplicatesBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 75);
@@ -85,7 +89,9 @@
             this.Controls.Add(this.deleteDuplicatesBtn);
             this.Controls.Add(this.changeDirBtn);
             this.Controls.Add(this.dirTxtbox);
+            this.MinimumSize = new System.Drawing.Size(625, 114);
             this.Name = "DuplicateRemove";
+            this.ShowIcon = false;
             this.Text = "FIlesDuplicateRemover";
             this.ResumeLayout(false);
             this.PerformLayout();
