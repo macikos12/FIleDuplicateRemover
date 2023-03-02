@@ -43,7 +43,7 @@ namespace FIleDuplicateRemover
         }
         private void deleteDuplicatesBtn_Click(object sender, EventArgs e)
         {
-            if (dirTxtbox.Text == "")
+            if (dirTxtbox.Text == "" || !Directory.Exists(dirTxtbox.Text))
             {
                 return;
             }
